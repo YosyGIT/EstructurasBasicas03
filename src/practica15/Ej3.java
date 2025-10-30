@@ -6,8 +6,7 @@ public class Ej3 {
         sc.useLocale(Locale.US);
 
         int[] array;
-        int[] arrayRecolector;
-        int calcularTamano, tamano = 1, numero, posicion = 0;
+        int calcularTamano, tamano = 0, numero;
 
         System.out.print("Introduce un numero entero: ");
         calcularTamano = sc.nextInt();
@@ -21,19 +20,14 @@ public class Ej3 {
         while(calcularTamano > 0){
             calcularTamano /= 10;
             tamano++;
-            System.out.println(calcularTamano);
         }
-        arrayRecolector = new int[tamano];
+        tamano -= 1;
         array = new int[tamano];
 
-        while(numero > 0){
-            numero %= 10;
-            arrayRecolector[posicion] = numero;
-            posicion++;
-        }
-
-        for (int i = 0; i < arrayRecolector.length; i++) {
-            System.out.println(arrayRecolector[i]);
+        for (int i = 0; i < array.length; i++) {
+            array[tamano] = numero % 10;
+            tamano--;
+            System.out.print(array[i] + "\t");
         }
     }
 }
