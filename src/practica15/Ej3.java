@@ -21,13 +21,16 @@ public class Ej3 {
             calcularTamano /= 10;
             tamano++;
         }
-        tamano -= 1;
         array = new int[tamano];
 
         for (int i = 0; i < array.length; i++) {
-            array[tamano] = numero % 10;
+            array[i] = numero % 10;
+            numero /= 10;
+        }
+
+        for (int i = tamano; i > 0; i--) {
+            System.out.print(array[tamano - 1] + "\t");
             tamano--;
-            System.out.print(array[i] + "\t");
         }
     }
 }
