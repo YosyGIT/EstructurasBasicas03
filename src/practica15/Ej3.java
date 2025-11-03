@@ -28,9 +28,8 @@ public class Ej3 {
             numero /= 10;
         }
 
-        for (int i = tamano; i > 0; i--) {
-            System.out.print(array[tamano - 1] + "\t");
-            tamano--;
+        for (int j = tamano; j > 0; j--) {
+            System.out.print(array[j - 1] + "\t");
         }
     }
 }

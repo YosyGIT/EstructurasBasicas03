@@ -10,7 +10,7 @@ public class Ej5 {
         for (int i = 0; i < numeros.length; i++) {
             System.out.print("Introduce un numero: ");
             numeros[i] = sc.nextInt();
-            for (int j = 0; j < numeros.length; j++) {
+            for (int j = i - 1; j >= 0; j--) {
                 if (numeros[j] == numeros[i]) {
                     System.out.println("El numero ya se encuentra en el array");
                 }
