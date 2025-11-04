@@ -15,6 +15,11 @@ public class Ej7 {
             System.out.println("4) Salir");
             System.out.print("->");
             opcion = sc.nextInt();
+
+            while(opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4){
+                System.out.println("Opcion invalida, elija una opcion: ");
+                opcion = sc.nextInt();
+            }
             System.out.println("**********************************" + "\n");
 
             switch (opcion) {

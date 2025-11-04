@@ -5,8 +5,27 @@ public class Ej9 {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
 
-        int[] numeros = new int[60];
-        int opcion = 0, numero, contadorArray = 0;
+        int[] numeros = new int[60], numerosSaliendo = new int[60];
+        int opcion = 0, numerar = 0, posicion = 0;
+        int l, r , guardar;
+
+        for (int i = 1; i < numeros.length; i++) {
+            numeros[i] = i;
+        }
+
+        //Revolver numeros
+        for (int j = 0; j < 1000; j++) {
+            l = (int) (Math.random() * 60);
+            r = (int) (Math.random() * 60);
+
+            guardar = numeros[l];
+            numeros[l] =  numeros[r];
+            numeros[r] =  guardar;
+        }
+
+        for (int lista: numeros){
+            System.out.println(lista);
+        }
 
         while(opcion != 2){
             System.out.println("1) Sigueinte numero");
@@ -23,19 +42,15 @@ public class Ej9 {
                 case 1:
                     System.out.println("************************");
 
-                    for (int i = 0; i < numeros.length ; i++) {
-                        numero = (int)(Math.random()*(60 - 1 + 1) + 1);
-                        for (int j = 0; j < numeros.length; j++) {
-                            if (numeros[j] == numero) {
-                                numero = (int)(Math.random()*(60 - 1 + 1) + 1);
-                            }
-                        }
-                        numeros[i] = numero;
+                    System.out.println((numerar + 1) + ") numero: " + numeros[posicion]);
+                    System.out.println("************************");
+                    numerar++;
+                    posicion++;
+
+                    if(posicion == numeros.length){
+                        System.out.println("Todos los numeros han salido.");
                     }
 
-                    System.out.println((contadorArray + 1) + ") numero: " + numeros[contadorArray]);
-                    System.out.println("************************");
-                    contadorArray++;
                     break;
             }
         }

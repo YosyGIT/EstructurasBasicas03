@@ -6,7 +6,8 @@ public class Ej6 {
         sc.useLocale(Locale.US);
 
         int[] array1 = new int[10], array2 = new int[10];
-        int coincidencia = 0, i = 0 , j = 0;
+        int coincidencia = 0;
+        boolean encontrado;
 
         for (int l = 0; l < array1.length; l++) {
             System.out.print("Introduce el " + (l + 1) + "º numero: ");
@@ -21,20 +22,14 @@ public class Ej6 {
         System.out.println("------------------------------");
 
         //Buscamos si la coincidencia entre los arrays es de 10 numeros
-        for (i = 0; i < array1.length; i++) {
-            if (array1[i] == array2[j]) {
-                coincidencia++;
-            } else {
-                j++;
-            }
-        }
-        i = 0;
-
-        for (j = 0; j < array2.length; j++) {
-            if (array1[i] == array2[j]) {
-                coincidencia++;
-            }else {
-                i++;
+        for (int i = 0; i < array1.length; i++) {
+            encontrado = false;
+            for (int j = 0; j < array2.length; j++) {
+                if (array1[i] == array2[j] && encontrado == false) {
+                    array2[j] = -1;
+                    coincidencia++;
+                    encontrado = true;
+                }
             }
         }
 
