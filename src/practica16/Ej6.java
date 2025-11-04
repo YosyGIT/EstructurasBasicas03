@@ -6,26 +6,35 @@ public class Ej6 {
         sc.useLocale(Locale.US);
 
         int[] array1 = new int[10], array2 = new int[10];
-        int coincidencia = 0;
+        int coincidencia = 0, i = 0 , j = 0;
 
-        for (int i = 0; i < array1.length; i++) {
-            System.out.print("Introduce el " + (i + 1) + "º numero: ");
-            array1[i] = sc.nextInt();
+        for (int l = 0; l < array1.length; l++) {
+            System.out.print("Introduce el " + (l + 1) + "º numero: ");
+            array1[l] = sc.nextInt();
         }
         System.out.println("------------------------------");
 
-        for (int i = 0; i < array2.length; i++) {
-            System.out.print("Introduce el " + (i + 1) + "º numero: ");
-            array2[i] = sc.nextInt();
+        for (int k = 0; k < array2.length; k++) {
+            System.out.print("Introduce el " + (k + 1) + "º numero: ");
+            array2[k] = sc.nextInt();
         }
         System.out.println("------------------------------");
 
         //Buscamos si la coincidencia entre los arrays es de 10 numeros
-        for (int i = 0; i < array1.length; i++) {
-            for (int j = 0; j < array2.length; j++) {
-                if (array1[i] == array2[j]) {
-                    coincidencia++;
-                }
+        for (i = 0; i < array1.length; i++) {
+            if (array1[i] == array2[j]) {
+                coincidencia++;
+            } else {
+                j++;
+            }
+        }
+        i = 0;
+
+        for (j = 0; j < array2.length; j++) {
+            if (array1[i] == array2[j]) {
+                coincidencia++;
+            }else {
+                i++;
             }
         }
 

@@ -9,10 +9,10 @@ public class Ej7 {
         int opcion = 0, sala;
 
         while (opcion != 4) {
-            System.out.println("1) Reservar sala: ");
-            System.out.println("2) Liberar sala: ");
-            System.out.println("3) Listar sala: ");
-            System.out.println("4) Salir: ");
+            System.out.println("1) Reservar sala");
+            System.out.println("2) Liberar sala");
+            System.out.println("3) Listar sala");
+            System.out.println("4) Salir");
             System.out.print("->");
             opcion = sc.nextInt();
             System.out.println("**********************************" + "\n");

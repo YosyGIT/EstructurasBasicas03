@@ -31,5 +31,44 @@ public class Ej3 {
         for (int j = tamano; j > 0; j--) {
             System.out.print(array[j - 1] + "\t");
         }
+        System.out.println();
+        //Llamamaos al metodo del profesor
+        metodoProfesor();
+    }
+
+    public static void metodoProfesor (){
+        Scanner sc = new Scanner(System.in);
+        sc.useLocale(Locale.US);
+
+        byte[] array;
+        long numero, auxNumero;
+        byte cifras = 0;
+
+        System.out.println("****METODO DEL PROFESOR****");
+
+        System.out.println("Introduce un numero entero: ");
+        numero = sc.nextLong();
+
+        while(numero <= 0){
+            System.out.println("ERROR: No se puede realizar el programa con un numero negativo o cero. Introduce un numero entero: ");
+            numero = sc.nextLong();
+        }
+        auxNumero = numero;
+
+        while(auxNumero > 0){
+            auxNumero /= 10;
+            cifras++;
+        }
+        array = new byte[cifras];
+
+        for (int i = cifras - 1; i >= 0; i--) {
+            array[i] = (byte) (numero % 10);
+            numero /= 10;
+        }
+
+        for (byte listar : array){
+            System.out.print(listar);
+        }
+        System.out.println();
     }
 }

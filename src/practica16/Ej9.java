@@ -23,13 +23,15 @@ public class Ej9 {
                 case 1:
                     System.out.println("************************");
 
+                    for (int i = 0; i < numeros.length ; i++) {
                         numero = (int)(Math.random()*(60 - 1 + 1) + 1);
-                        for (int i = contadorArray; i >= 0; i--) {
-                            while (numeros[i] == numero) {
+                        for (int j = 0; j < numeros.length; j++) {
+                            if (numeros[j] == numero) {
                                 numero = (int)(Math.random()*(60 - 1 + 1) + 1);
                             }
                         }
-                    numeros[contadorArray] = numero;
+                        numeros[i] = numero;
+                    }
 
                     System.out.println((contadorArray + 1) + ") numero: " + numeros[contadorArray]);
                     System.out.println("************************");
