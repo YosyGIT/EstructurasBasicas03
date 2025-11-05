@@ -6,8 +6,8 @@ public class Ej4 {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
 
-        int[] array = new int [20];
-        int numero, rotadorAux;
+        int[] array = new int [20], arrayAux = new int[20];
+        int numero, posicion;
 
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * (20 - 1 + 1) + 1);
@@ -15,22 +15,21 @@ public class Ej4 {
         }
         System.out.println("\n" + "---------------------------------------");
 
-        System.out.println("Introduce un numero para rotar el listado de números (1-19): ");
+        System.out.print("Introduce un numero para rotar el listado de números (1-19): ");
         numero = sc.nextInt();
 
         while (numero < 1 || numero > 19) {
-            System.out.println("ERROR: fuera de rango, introduzca de nuevo: ");
+            System.out.print("ERROR: fuera de rango, introduzca de nuevo: ");
             numero = sc.nextInt();
         }
 
-        for (int i = 0, j = (numero - 1); i < array.length; i++, j++) {
-            rotadorAux = array[i];
-            array[i] = j;
-            System.out.println("***** j: " + j + " |array: " + array[i]);
+        for (int i = 0; i < array.length; i++) {
+            posicion = (i + numero) % array.length;
+            arrayAux[posicion] = array[i];
         }
-        System.out.println("\n" + "---------------------------------------");
+        System.out.println("---------------------------------------");
 
-        for (int j : array) {
+        for (int j : arrayAux) {
             System.out.print(j + "\t");
         }
     }

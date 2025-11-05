@@ -23,10 +23,6 @@ public class Ej9 {
             numeros[r] =  guardar;
         }
 
-        for (int lista: numeros){
-            System.out.println(lista);
-        }
-
         while(opcion != 2){
             System.out.println("1) Sigueinte numero");
             System.out.println("2) Salir");
