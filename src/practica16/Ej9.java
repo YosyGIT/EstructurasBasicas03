@@ -5,7 +5,7 @@ public class Ej9 {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
 
-        int[] numeros = new int[60], numerosSaliendo = new int[60];
+        int[] numeros = new int[60];
         int opcion = 0, numerar = 0, posicion = 0;
         int l, r , guardar;
 
@@ -46,7 +46,6 @@ public class Ej9 {
                     if(posicion == numeros.length){
                         System.out.println("Todos los numeros han salido.");
                     }
-
                     break;
             }
         }

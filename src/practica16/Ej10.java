@@ -3,7 +3,7 @@ package practica16;
 public class Ej10 {
     public static void main(String[] args) {
         boolean[] primos = new boolean[10000];
-        int numerar = 0, multiplo = 0, reparto = 0;
+        int numerar = 0, reparto = 0;
 
         for (int i = 2; i < primos.length; i++) {
             primos[i] = true;
