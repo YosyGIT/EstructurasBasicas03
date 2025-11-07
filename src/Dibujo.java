@@ -13,6 +13,7 @@ public class Dibujo {
                 array[i][j] = '·';
             }
         }
+        array[x][y] = 'X';
 
         while (opcion != 0) {
             System.out.println("0) Salir");
