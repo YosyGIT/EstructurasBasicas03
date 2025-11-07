@@ -55,16 +55,15 @@ public class Dibujo {
                     borro = false;
                     break;
                 case 5:
+                    System.out.println((pinto?"Lapiz abajo":"Lapiz arriba") + (borro?", Goma abajo":", Goma arriba"));
                     if (x == 0) {
                         System.err.println("LIMITE ENCONTRADO: No se puede subir en el tablero.");
                     } else if(pinto){
-                        borro = false;
                         x--;
                         array[x][y] = (char)(0x2588);
                     } else if (borro) {
-                        pinto = false;
                         x--;
-                        array[x][y] = (char)(0x2588);
+                        array[x][y] = '·';
                     } else {
                         x--;
 
@@ -72,14 +71,13 @@ public class Dibujo {
                     System.out.println(nuevaPosicion);
                     break;
                 case 6:
+                    System.out.println((pinto?"Lapiz abajo":"Lapiz arriba") + (borro?", Goma abajo":", Goma arriba"));
                     if (x == 14) {
                         System.err.println("LIMITE ENCONTRADO: No se puede bajar en el tablero.");
                     } else if(pinto){
-                        borro = false;
                         x++;
                         array[x][y] = (char)(0x2588);
                     } else if (borro) {
-                        pinto = false;
                         x++;
                         array[x][y] = '·';
                     } else {
@@ -88,14 +86,13 @@ public class Dibujo {
                     System.out.println(nuevaPosicion);
                     break;
                 case 7:
+                    System.out.println((pinto?"Lapiz abajo":"Lapiz arriba") + (borro?", Goma abajo":", Goma arriba"));
                     if (y == 0) {
                         System.err.println("LIMITE ENCONTRADO: No se puede mover a la izquierda en el tablero.");
                     } else if(pinto){
-                        borro = false;
                         y--;
                         array[x][y] = (char)(0x2588);
                     } else if (borro) {
-                        pinto = false;
                         y--;
                         array[x][y] = '·';
                     } else {
@@ -105,14 +102,13 @@ public class Dibujo {
                     System.out.println(nuevaPosicion);
                     break;
                 case 8:
+                    System.out.println((pinto?"Lapiz abajo":"Lapiz arriba") + (borro?", Goma abajo":", Goma arriba"));
                     if (y == 69) {
                         System.err.println("LIMITE ENCONTRADO: No se puede mover a la derecha en el tablero.");
                     } else if(pinto){
-                        borro = false;
                         y++;
                         array[x][y] = (char)(0x2588);
                     } else if (borro) {
-                        pinto = false;
                         y++;
                         array[x][y] = '·';
                     } else {
