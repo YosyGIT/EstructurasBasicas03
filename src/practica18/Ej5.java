@@ -6,26 +6,37 @@ public class Ej5 {
 
         char[] array;
         String texto;
-        byte repeticiones = 0;
+        byte repeticiones = 1, comprobar = 0;
+        boolean mostrar = false;
+        char caracter = 'Z';
 
-        System.out.println("-Introduce el texto: ");
+        System.out.print("-Introduce el texto: ");
         texto = in.nextLine();
         texto = texto.toLowerCase();
         array = new char[texto.length()];
+        array = texto.toCharArray();
+        Arrays.sort(array);
 
-        for (int i = 0; i < texto.length(); i++){
-            array[i] = texto.charAt(i);
-            for (int z = (texto.length() - 1); z == i; z--){
-                if (texto.charAt(i)==texto.charAt(z)){
+        System.out.println(Arrays.toString(array));
+
+        for (int i = 0; i < array.length; i++){
+            mostrar = false;
+            
+            for (int j = i; j < array.length; j++){
+                if (array[i] == texto.charAt(i)){
                     repeticiones++;
+                } else if (array[i] != texto.charAt(i)) {
+                    mostrar = true;
+                    i = comprobar;
+                    caracter = array[i];
                 }
+                comprobar++;
             }
-            if (repeticiones != 1){
-                System.out.println(texto.charAt(i) + repeticiones + " veces");
-            } else {
-                System.out.println(texto.charAt(i) + repeticiones + " vez");
+            
+            if (repeticiones != 1 && mostrar){
+                System.out.println(caracter + " " + repeticiones + " veces");
             }
-            repeticiones = 0;
+            repeticiones = 1;
         }
     }
 }
