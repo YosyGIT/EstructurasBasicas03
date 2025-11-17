@@ -6,9 +6,8 @@ public class Ej5 {
 
         char[] array;
         String texto;
-        byte repeticiones = 1, comprobar = 0;
-        boolean mostrar = false;
-        char caracter = 'Z';
+        byte repeticiones = 1, posicionCaracter = 0;
+        char caracter;
 
         System.out.print("-Introduce el texto: ");
         texto = in.nextLine();
@@ -18,25 +17,20 @@ public class Ej5 {
         Arrays.sort(array);
 
         System.out.println(Arrays.toString(array));
+        caracter = array[posicionCaracter];
 
-        for (int i = 0; i < array.length; i++){
-            mostrar = false;
-            
-            for (int j = i; j < array.length; j++){
-                if (array[i] == texto.charAt(i)){
-                    repeticiones++;
-                } else if (array[i] != texto.charAt(i)) {
-                    mostrar = true;
-                    i = comprobar;
-                    caracter = array[i];
-                }
-                comprobar++;
-            }
-            
-            if (repeticiones != 1 && mostrar){
+        for (int i = 1; i < array.length; i++){
+
+
+            if (array[i] == caracter){
+                repeticiones++;
+            } else if (caracter != array[i]) {
+                posicionCaracter = (byte) i;
                 System.out.println(caracter + " " + repeticiones + " veces");
+                caracter = array[posicionCaracter];
+                repeticiones = 1;
             }
-            repeticiones = 1;
         }
+        System.out.println(caracter + " " + repeticiones + " veces");
     }
 }
