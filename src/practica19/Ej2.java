@@ -10,12 +10,12 @@ public class Ej2 {
         System.out.print("Introduce la contraseña: ");
         pass = sc.nextLine();
 
-        if (pass.matches("[A-Za-zÑn0-9[^A-ZÑa-zñ0-9]]{10}([A-Za-zÑn0-9\\p{S}\\p{Sc}])*")){
-            if (pass.matches(".*A-ZÑ.*")){
+        if (pass.matches("[A-Za-zÑn0-9[^A-ZÑa-zñ0-9]]{10}([A-Za-zÑn0-9[^A-ZÑa-zñ0-9]])*")){
+            if (pass.matches(".*[A-ZÑ].*")){
                 mayus = true;
-                if (pass.matches(".*a-zñ.*")){
+                if (pass.matches(".*[a-zñ].*")){
                     minus = true;
-                    if (pass.matches(".*0-9.*")) {
+                    if (pass.matches(".*[0-9].*")) {
                         numero = true;
                         if (pass.matches(".*[^A-ZÑa-zñ0-9].*")) {
                             simbolo = true;
