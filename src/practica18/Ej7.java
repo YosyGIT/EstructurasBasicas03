@@ -30,7 +30,12 @@ public class Ej7 {
 
         if (correcto){
             numero = (Integer.parseInt(nifTransormado.substring(0,7)) % 23);
-            System.out.println(numero);
+            System.out.println(numero + " " + letra[numero] + " " + nif.charAt(8));
+            if (letra[numero] == nif.charAt(8)){
+                System.out.println("NIF [" + nif + "] Correcto");
+            }else{
+                System.out.println("NIF [" + nif + "] Incorrecto");
+            }
         }
     }
 }
