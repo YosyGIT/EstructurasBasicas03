@@ -5,23 +5,39 @@ public class Ej5 {
         Scanner sc = new Scanner(System.in);
 
         String fecha;
-        String dia;
-        String mes;
-        String year;
+
+        int yearEntero;
+        String dia, mes, year;
+        boolean correcto = false, bisiesto = false;
 
         System.out.print("Introduce la fecha: ");
         fecha = sc.nextLine();
-
-        //08/11/2001
 
         dia = fecha.substring(0,2);
         mes = fecha.substring(3,5);
         year = fecha.substring(6,10);
 
-        System.out.println(dia + mes + year);
+        yearEntero = Integer.parseInt(year);
+        bisiesto = (yearEntero % 4 == 0 && yearEntero % 100 != 0) || (yearEntero % 400 == 0);
 
-        if (fecha.matches("([01][0-9]/[0][1-9]/([0-9]){4})|([2][0-9]/[0][1-9]/([0-2][0-9][0-9][0-9]))")){
+        if (fecha.matches("(([0-2][1-9])|30|31)/(0[1-9]|1[0-2])/[0-2][0-9]{3}")){
+            if (dia.matches("31")){
+                if (mes.matches("01|03|05|07|08|10|12")) correcto = true;
 
+            } else if (dia.matches("30")) {
+                if (mes.matches("04|06|09|11"))  correcto = true;
+
+            } else if (mes.matches("02")) {
+                if (dia.matches("29") && bisiesto){
+                    correcto = true;
+                }
+
+            }else {
+                correcto = true;
+            }
         }
+
+        if (correcto) System.out.println("Fecha correcta: " + fecha);
     }
 }
+
