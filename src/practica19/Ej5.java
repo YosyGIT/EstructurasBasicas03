@@ -35,6 +35,8 @@ public class Ej5 {
             }else {
                 correcto = true;
             }
+        }else {
+            System.out.println("ERROR:: Formato de fecha no valido");
         }
 
         if (correcto) System.out.println("Fecha correcta: " + fecha);
