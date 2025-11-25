@@ -20,8 +20,6 @@ public class Ej5 {
         caracter = array[posicionCaracter];
 
         for (int i = 1; i < array.length; i++){
-
-
             if (array[i] == caracter){
                 repeticiones++;
             } else if (caracter != array[i]) {
